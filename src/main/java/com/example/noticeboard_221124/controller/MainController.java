@@ -9,7 +9,7 @@ public class MainController {
     @RequestMapping("")
     public ModelAndView test() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("");
+        mv.setViewName("test");
         return mv;
     }
 }
