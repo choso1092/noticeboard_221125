@@ -1,4 +1,4 @@
-package com.example.noticeboard_221124.dgtest;
+package com.example.noticeboard_221124.dbtest;
 
 import org.junit.jupiter.api.Test;
 
