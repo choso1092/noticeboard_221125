@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
+
+    <script src="../js/login.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <script src="/js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
     <section class = "login-form">
-      <img src="../image/board.png" style="width: 250px; margin-bottom: 10px; margin-left: 85px;">
+      <img src="../image/board.png" style="width: 350px; margin-bottom: 25px; margin-left: 30px;">
       <form action = "">
         <div class = "int-area">
           <input type="text" name="id" id="id"
@@ -20,9 +22,8 @@
             autocomplete="off" required>
             <label for="pw">PASSWORD</label>
         </div>
-          <div class="btn-area", style="display: flex">
-
-              <button type="submit">로그인</button>
+          <div class="btn-area" style="display: flex">
+              <button type="submit" onclick="loginChk();">로그인</button>
               <button type="submit">회원가입</button>
           </div>
       </form>
