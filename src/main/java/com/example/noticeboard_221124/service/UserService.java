@@ -4,6 +4,7 @@ import com.example.noticeboard_221124.mapper.UserMapper;
 import com.example.noticeboard_221124.vo.UserVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.LifecycleProcessor;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,5 +28,15 @@ public class UserService {
             result = false;
         }
         return result;
+    }
+
+    public void joinUser(UserVo param){
+        Integer count = getUserCountByUserId(param.getUserId());
+        if (count == 0 ) {
+            userMapper.joinUser(param);
+        }
+    }
+    public Integer getUserCountByUserId(String userId) {
+        return userMapper.duplicateUserByUserId(userId);
     }
 }

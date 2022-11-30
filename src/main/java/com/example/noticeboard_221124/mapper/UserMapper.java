@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     Integer isLoginAble(UserVo param);
+    Integer duplicateUserByUserId(String userId); // 유저 중복체크
+    int joinUser(UserVo param);
 }

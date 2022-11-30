@@ -5,8 +5,8 @@
     <title>게시판</title>
 
     <script src="../js/login.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
     <script src="/js/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <section class = "login-form">
@@ -24,7 +24,7 @@
         </div>
           <div class="btn-area" style="display: flex">
               <button type="submit" onclick="loginChk();">로그인</button>
-              <button type="submit">회원가입</button>
+              <button type="submit" onclick="gotoJoinPage();">회원가입</button>
           </div>
       </form>
       </div>
@@ -32,3 +32,8 @@
 
 </body>
 </html>
+<script>
+    gotoJoinPage = function(){
+        location.href = "/join";
+    }
+</script>
