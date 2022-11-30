@@ -30,11 +30,15 @@ public class UserService {
         return result;
     }
 
-    public void joinUser(UserVo param){
+    public Boolean joinUser(UserVo param){
+        Boolean result = false;
         Integer count = getUserCountByUserId(param.getUserId());
         if (count == 0 ) {
             userMapper.joinUser(param);
+            result = true;
         }
+        return result;
+
     }
     public Integer getUserCountByUserId(String userId) {
         return userMapper.duplicateUserByUserId(userId);

@@ -53,15 +53,17 @@ public class LoginController {
     public CommonResponseVo signUpUser(UserVo param) {
         /**1. 회원가입이 잘되었는 지 확인하고 싶다.
          * 2. 회원가입 -> DB 저장 을 하고싶다. **/
-        CommonResponseVo r = new CommonResponseVo();
+        CommonResponseVo result = new CommonResponseVo();
         try {
-            userService.joinUser(param);
-            r.setSuccess(true);
-
+            Boolean r = userService.joinUser(param);
+            result.setSuccess(r);
+            if(r == false){
+                result.setMessage("exist user");
+            }
         } catch (Exception e) {
-            r.setSuccess(false);
-            r.setMessage(e.toString());
+            System.out.println(e);
+            result.setSuccess(false);
         }
-        return r;
+        return result;
     }
 }

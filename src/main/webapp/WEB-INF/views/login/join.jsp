@@ -24,8 +24,10 @@
         <div class="form__group">
             <input type="text" placeholder="phone_number" class="form__input" id="pn"/>
         </div>
-        <button class="btn" type="button" onclick="signUpUser();">회원가입</button>
+        <div style="display:flex;">
+        <button class="btn" type="button" onclick="checkForm();">회원가입</button>
         <button class="btn" type="button" onclick="location.href='/login'">돌아가기</button>
+        </div>
     </form>
 </div>
 </body>

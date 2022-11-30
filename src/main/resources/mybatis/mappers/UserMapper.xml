@@ -7,17 +7,6 @@
         WHERE u.user_id = #{userId}
           AND u.user_password = #{userPassword}
     </select>
-    <select id="getUserList" resultType="com.example.noticeboard_221124.vo.UserVo">
-        SELECT U.USER_NAME
-             , U.USER_ID
-        FROM USER U
-        WHERE 1 = 1
-    </select>
-    <select id="getUserCount" resultType="int">
-        SELECT COUNT(U.USER_NAME)
-        FROM USER U
-        WHERE 1 = 1
-    </select>
     <select id="duplicateUserByUserId" resultType="int">
         SELECT COUNT(U.USER_ID)
         FROM USER U
