@@ -9,31 +9,31 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <section class = "login-form">
-      <img src="../image/board.png" style="width: 350px; margin-bottom: 25px; margin-left: 30px;">
-      <form action = "">
-        <div class = "int-area">
-          <input type="text" name="id" id="id"
-                 autocomplete="off" required>
-                 <label for="id">USER ID</label>
+<section class="login-form">
+    <img src="../image/board.png" style="width: 350px; margin-bottom: 25px; margin-left: 30px;">
+    <form action="">
+        <div class="int-area">
+            <input type="text" name="id" id="id"
+                   autocomplete="off" required>
+            <label for="id">USER ID</label>
         </div>
         <div class="int-area">
             <input type="password" name="pw" id="pw"
-            autocomplete="off" required>
+                   autocomplete="off" required>
             <label for="pw">PASSWORD</label>
         </div>
-          <div class="btn-area" style="display: flex">
-              <button type="submit" onclick="loginChk();">로그인</button>
-              <button type="submit" onclick="gotoJoinPage();">회원가입</button>
-          </div>
-      </form>
-      </div>
-    </section>
+        <div class="btn-area" style="display: flex">
+            <button type="button" onclick="loginChk();">로그인</button>
+            <button type="submit" onclick="gotoJoinPage();">회원가입</button>
+        </div>
+    </form>
+    </div>
+</section>
 
 </body>
 </html>
 <script>
-    gotoJoinPage = function(){
+    gotoJoinPage = function () {
         location.href = "/join";
     }
 </script>

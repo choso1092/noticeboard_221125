@@ -7,7 +7,8 @@ signUpUser = function (param) {
         , success : function (data) {
             console.log(data);
             if (data.success) {
-                alert("성공 햇습니다");
+                alert("성공 했습니다");
+                location.href = "/login";
             } else if (! data.success && data.message=="exist user"){
                 alert("중복된 아이디가 존재합니다");
             } else {
@@ -18,9 +19,6 @@ signUpUser = function (param) {
             alert("아예 실패했습니다");
 
         }
-        // , beforeSend :function (xhr) {
-        //     xhr.setRequestHeader();
-        // }
     })
 }
 checkForm = function () {

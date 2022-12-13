@@ -14,6 +14,6 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
 
 
-    <img src="../image/board.jpg" style="height: 35px;">
+    <img src="../image/board.png" style="height: 35px;">
 
 </head>
