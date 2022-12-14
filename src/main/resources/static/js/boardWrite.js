@@ -7,7 +7,9 @@ create = function (){
         title : title
         , content : content
         , userId : userId
+
     }
+    console.log(param);
     $.ajax({
        url : "/board/create"
         , type : "POST"
@@ -16,7 +18,7 @@ create = function (){
            console.log(data);
            if(data.success){
                alert("성공했습니다")
-               location.href = '/board'
+               location.href = "/board";
            }else{
                alert("실패 다시 시도해주세요;")
            }
@@ -25,7 +27,6 @@ create = function (){
         }
     })
 }
-
 gotoBoardPage = function(){
     location.href = "/board";
 }

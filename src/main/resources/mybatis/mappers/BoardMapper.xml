@@ -33,4 +33,13 @@
         </if>
         order by num desc
     </select>
+    <select id="getBoardDetail" resultType="com.example.noticeboard_221124.vo.BoardVo">
+        SELECT b.board_number
+             , b.title
+             , b.content
+             , b.board_time
+             , b.user_id as register_id
+        FROM board b
+        WHERE b.board_number = #{boardNumber}
+    </select>
 </mapper>

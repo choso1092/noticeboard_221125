@@ -40,8 +40,4 @@
     search();
   })
 
-  boardWrite = function () {
-    let userId = $("#userId").val();
-    location.href = "/board/boardWrite?userId=" + userId;
-  }
 </script>

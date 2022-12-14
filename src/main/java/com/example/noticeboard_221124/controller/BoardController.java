@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -26,13 +28,15 @@ public class BoardController {
         mv.setViewName("board/board");
         return mv;
     }
+
     @RequestMapping("/boardWrite")
-    public ModelAndView createPage(String userID){
+    public ModelAndView createPage(String userId) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("userId", userID);
+        mv.addObject("userId", userId);
         mv.setViewName("board/boardWrite");
         return mv;
     }
+
     @RequestMapping("/create")
     @ResponseBody
     public CommonResponseVo createBoard(BoardVo param) {
@@ -47,6 +51,7 @@ public class BoardController {
         }
         return r;
     }
+
     @RequestMapping("/getBoardList")
     @ResponseBody
     public CommonResponseVo viewBoard(SearchBoardDTO searchBoardDTO) {
@@ -61,5 +66,25 @@ public class BoardController {
             r.setMessage(e.toString());
         }
         return r;
+    }
+
+    @RequestMapping("/boardDetail")
+    public ModelAndView boardViewDetail(String boardNumber, HttpServletRequest request) {
+        ModelAndView mv = new ModelAndView();
+        HttpSession session = request.getSession();
+        try {
+            BoardVo boardDetail = new BoardVo();
+            /** Service 에 boardNumber 를 넘겨서 detail view 에 들어갈 detail data 를 꺼내와야 함 **/
+            boardDetail = boardService.getBoardDetail(boardNumber);
+            /**ModelAndView 에 Object 를 포함해서 가져오겠다.*/
+            mv.addObject("boardDetail", boardDetail);
+            mv.addObject("userId", session.getAttribute("userId"));
+            /** jsp 에서 jstl 구문으로 불러와서 사용할 수 있음
+             * Tag 라이브러리 를 사용해서 , <c:if></c:if> <c:forEach></c:forEach> <c:choose><c:when></c:when></c:choose> */
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        mv.setViewName("board/boardView");
+        return mv;
     }
 }

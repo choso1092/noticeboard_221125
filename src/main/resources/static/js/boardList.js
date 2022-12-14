@@ -31,5 +31,8 @@ search = function () {
             alert("실패했어요")
         }
     })
-
+}
+boardWrite = function () {
+    let userId = $("#userId").val();
+    location.href = "/board/boardWrite?userId=" + userId;
 }
